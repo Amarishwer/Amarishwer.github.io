@@ -1,0 +1,796 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Amarishwer Edam - Senior Data Engineer specializing in cloud data platforms, ETL/ELT, Python, SQL, Azure, and LLM data infrastructure.">
+  <title>Amarishwer Edam | Senior Data Engineer</title>
+
+  <style>
+    :root {
+      --bg: #080d19;
+      --surface: #111b2e;
+      --border: #263650;
+      --text: #eef4ff;
+      --muted: #a0aec4;
+      --accent: #5eead4;
+      --blue: #60a5fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 13, 25, 0.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 110px 0 90px;
+      background: radial-gradient(
+        ellipse at 80% 20%,
+        #183153 0%,
+        var(--bg) 65%
+      );
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.12;
+      margin: 18px 0;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 38px);
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    .hero-description {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 9px;
+      font-weight: 700;
+      border: 1px solid var(--accent);
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #08111c;
+    }
+
+    .btn-secondary {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 75px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 780px;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: #1b3145;
+      border: 1px solid #31566c;
+      border-radius: 6px;
+      color: #b6f5eb;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
+    .timeline {
+      border-left: 2px solid var(--border);
+      padding-left: 25px;
+    }
+
+    .job {
+      position: relative;
+      margin-bottom: 30px;
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      left: -32px;
+      top: 30px;
+    }
+
+    .date {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .company {
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .contact-box {
+      text-align: center;
+      padding: 50px 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#home">AE.</a>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+
+        <div class="eyebrow">
+          Senior Data Engineer | Cloud & AI Data Infrastructure
+        </div>
+
+        <h1>
+          Hi, I'm <span>Amar Edam.</span><br>
+          I build scalable data systems.
+        </h1>
+
+        <p class="hero-description">
+          Senior Data Engineer with 10+ years of experience
+          designing ETL/ELT pipelines, cloud data platforms,
+          enterprise analytics solutions, and data infrastructure
+          supporting AI and large language models.
+        </p>
+
+        <p class="hero-description">
+          Specializing in Python, SQL, Apache Spark,
+          Azure Data Factory, Azure Databricks,
+          and Retrieval-Augmented Generation (RAG).
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#projects">
+            Explore My Work
+          </a>
+
+          <a class="btn btn-secondary" href="#contact">
+            Contact Me
+          </a>
+
+          <!-- Upload resume.pdf to enable this link -->
+          <a class="btn btn-secondary" href="resume.pdf"
+             download>
+            Download Resume
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+
+        <h2>About Me</h2>
+
+        <p class="section-description">
+          I am a Senior Data Engineer with more than
+          10 years of IT experience spanning data engineering,
+          ETL/ELT development, cloud data infrastructure,
+          SQL development, and business intelligence.
+        </p>
+
+        <p class="section-description">
+          My experience includes building data pipelines
+          for structured and unstructured information,
+          optimizing enterprise SQL workloads, developing
+          analytics solutions, and preparing data for
+          machine learning and LLM applications.
+        </p>
+
+        <p class="section-description">
+          My recent work focuses on Azure-based data platforms,
+          Python data preprocessing, vector databases,
+          semantic search, and RAG workflows using
+          LangChain and LlamaIndex.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+
+        <h2>Technical Expertise</h2>
+
+        <p class="section-description">
+          Technologies and platforms across enterprise
+          data engineering, cloud infrastructure,
+          analytics, and AI data systems.
+        </p>
+
+        <div class="grid">
+
+          <div class="card">
+            <h3>Data Engineering</h3>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">T-SQL</span>
+              <span class="tag">Apache Spark</span>
+              <span class="tag">ETL / ELT</span>
+              <span class="tag">SSIS</span>
+              <span class="tag">Alteryx</span>
+              <span class="tag">Data Modeling</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Cloud & Big Data</h3>
+            <div class="tag-list">
+              <span class="tag">Microsoft Azure</span>
+              <span class="tag">Azure Data Factory</span>
+              <span class="tag">Azure Databricks</span>
+              <span class="tag">Azure Data Lake</span>
+              <span class="tag">AWS</span>
+              <span class="tag">GCP</span>
+              <span class="tag">Apache Kafka</span>
+              <span class="tag">Cosmos DB</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>AI & LLM Infrastructure</h3>
+            <div class="tag-list">
+              <span class="tag">RAG</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">LlamaIndex</span>
+              <span class="tag">Pinecone</span>
+              <span class="tag">Chroma</span>
+              <span class="tag">Embeddings</span>
+              <span class="tag">NLP</span>
+              <span class="tag">LoRA</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Databases</h3>
+            <div class="tag-list">
+              <span class="tag">SQL Server</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Azure SQL</span>
+              <span class="tag">Oracle</span>
+              <span class="tag">NoSQL</span>
+              <span class="tag">Query Optimization</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Analytics & BI</h3>
+            <div class="tag-list">
+              <span class="tag">Power BI</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">SSRS</span>
+              <span class="tag">SSAS</span>
+              <span class="tag">DAX</span>
+              <span class="tag">Data Quality</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>DevOps & Platforms</h3>
+            <div class="tag-list">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Linux</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+
+        <h2>Professional Experience</h2>
+
+        <p class="section-description">
+          Experience delivering enterprise data platforms,
+          ETL solutions, cloud pipelines, and business
+          intelligence systems across multiple industries.
+        </p>
+
+        <div class="timeline">
+
+          <article class="job">
+            <div class="date">September 2020 - Present</div>
+            <h3>Senior Data Engineer / LLM Data Pipeline Engineer</h3>
+            <div class="company">
+              Commonwealth of Massachusetts
+            </div>
+
+            <ul>
+              <li>
+                Designed ETL/ELT pipelines for structured
+                and unstructured data supporting analytics
+                and AI/ML applications.
+              </li>
+              <li>
+                Implemented RAG workflows using LangChain,
+                LlamaIndex, and enterprise datasets.
+              </li>
+              <li>
+                Developed vector search solutions using
+                Pinecone and Chroma.
+              </li>
+              <li>
+                Built Python preprocessing pipelines for
+                cleaning, deduplication, and transformation
+                of text datasets.
+              </li>
+              <li>
+                Developed cloud pipelines using Azure
+                Data Factory, Azure Data Lake Storage,
+                and Azure Databricks.
+              </li>
+              <li>
+                Implemented data quality and model
+                monitoring dashboards using Power BI.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="date">July 2019 - August 2020</div>
+            <h3>Data Engineer / Business Intelligence Developer</h3>
+            <div class="company">Equifax</div>
+
+            <ul>
+              <li>
+                Developed ETL/ELT pipelines using Python,
+                Alteryx, and T-SQL.
+              </li>
+              <li>
+                Implemented metadata-driven incremental
+                data loading and logging.
+              </li>
+              <li>
+                Optimized SQL Server procedures,
+                indexing strategies, and data retrieval.
+              </li>
+              <li>
+                Worked with Semarchy xDM for master
+                data management and data quality.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="date">March 2018 - June 2019</div>
+            <h3>SQL Developer / Data Engineer</h3>
+            <div class="company">Michelin</div>
+
+            <ul>
+              <li>
+                Built SSIS pipelines integrating
+                multiple upstream data sources into
+                enterprise data warehouses.
+              </li>
+              <li>
+                Developed Power BI dashboards for
+                data quality and business KPIs.
+              </li>
+              <li>
+                Designed star schemas, fact tables,
+                and dimension tables.
+              </li>
+              <li>
+                Supported automated database and ETL
+                deployments using TFS.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="date">January 2017 - February 2018</div>
+            <h3>SQL Server / SSIS / SSRS Developer</h3>
+            <div class="company">Acrometis</div>
+
+            <ul>
+              <li>
+                Developed end-to-end SSIS data pipelines
+                for enterprise data marts.
+              </li>
+              <li>
+                Implemented data validation, ETL logging,
+                and SQL Agent scheduling.
+              </li>
+              <li>
+                Built stored procedures and SSRS reports
+                supporting business operations.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="date">June 2015 - July 2016</div>
+            <h3>SQL Server / MS BI Developer</h3>
+            <div class="company">Zeta Interactive</div>
+
+            <ul>
+              <li>
+                Developed SSIS packages for data
+                integration and migration.
+              </li>
+              <li>
+                Created T-SQL transformation logic,
+                database objects, and automated ETL jobs.
+              </li>
+              <li>
+                Developed SSRS operational and
+                analytical reporting solutions.
+              </li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+
+        <h2>Featured Engineering Work</h2>
+
+        <p class="section-description">
+          Selected engineering case studies based on
+          my professional experience. These summaries
+          focus on architecture and engineering practices
+          rather than confidential implementation details.
+        </p>
+
+        <div class="grid">
+
+          <article class="card">
+            <div class="project-number">CASE STUDY 01</div>
+            <h3>Enterprise RAG & Vector Search Infrastructure</h3>
+
+            <p>
+              Developed data preparation and retrieval
+              workflows connecting enterprise datasets
+              with large language model applications.
+            </p>
+
+            <ul>
+              <li>Text ingestion and preprocessing</li>
+              <li>Embedding storage and retrieval</li>
+              <li>Semantic search with vector databases</li>
+              <li>LLM evaluation and monitoring</li>
+            </ul>
+
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">LlamaIndex</span>
+              <span class="tag">Pinecone</span>
+              <span class="tag">Chroma</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="project-number">CASE STUDY 02</div>
+            <h3>Azure Cloud Data Engineering Pipelines</h3>
+
+            <p>
+              Designed cloud-based ingestion,
+              transformation, and analytics workflows
+              supporting enterprise data processing
+              and AI/ML data requirements.
+            </p>
+
+            <ul>
+              <li>Cloud data ingestion</li>
+              <li>ETL/ELT transformations</li>
+              <li>Data quality monitoring</li>
+              <li>Analytics-ready datasets</li>
+            </ul>
+
+            <div class="tag-list">
+              <span class="tag">Azure Data Factory</span>
+              <span class="tag">Azure Data Lake</span>
+              <span class="tag">Databricks</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Power BI</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="project-number">CASE STUDY 03</div>
+            <h3>Metadata-Driven ETL & Data Quality</h3>
+
+            <p>
+              Built enterprise integration workflows
+              using metadata-driven incremental loads,
+              data validation, logging, and
+              optimized SQL transformations.
+            </p>
+
+            <ul>
+              <li>Incremental data processing</li>
+              <li>Automated data transformations</li>
+              <li>Error handling and audit logging</li>
+              <li>Master data management</li>
+            </ul>
+
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Alteryx</span>
+              <span class="tag">T-SQL</span>
+              <span class="tag">SQL Server</span>
+              <span class="tag">Semarchy xDM</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div class="eyebrow">Let's Connect</div>
+
+          <h2>Interested in working together?</h2>
+
+          <p class="section-description"
+             style="margin-left:auto;margin-right:auto;">
+            I'm interested in opportunities involving
+            large-scale data engineering, cloud platforms,
+            data architecture, and AI data infrastructure.
+          </p>
+
+          <div class="buttons"
+               style="justify-content:center;">
+
+            <a class="btn btn-primary"
+               href="mailto:amaredam04.dev@gmail.com">
+              Email Me
+            </a>
+
+            <!-- Replace with your actual LinkedIn URL -->
+            <a class="btn btn-secondary"
+               href="https://www.linkedin.com/in/YOUR-LINKEDIN/"
+               target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+
+            <!-- Replace with your actual GitHub URL -->
+            <a class="btn btn-secondary"
+               href="https://github.com/YOUR-USERNAME"
+               target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="year"></span> Amar Edam.
+      Built with HTML, CSS & JavaScript.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
